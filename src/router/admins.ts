@@ -1,7 +1,7 @@
 import express from "express";
 
 import { approveUser, deleteAdmin, getAllAdmins, updateAdmin } from "../controllers/admins";
-import { checkPermissionForAdmin } from "../middlewares";
+import { checkPermissionForAdmin, isAdminExist } from "../middlewares";
 import { getAdminById } from "../db/admins";
 
 export default (router: express.Router) => {
@@ -9,18 +9,18 @@ export default (router: express.Router) => {
 
   router.get(
     "/admins/:id",
-    [ checkPermissionForAdmin()],
+    [isAdminExist, checkPermissionForAdmin()],
     getAdminById
   );
   
   router.delete(
     "/admins/:id",
-    [checkPermissionForAdmin()],
+    [isAdminExist,checkPermissionForAdmin()],
     deleteAdmin
   );
   
-  router.patch("/admins/:id", checkPermissionForAdmin(), updateAdmin);
+  router.patch("/admins/:id", [isAdminExist,checkPermissionForAdmin()], updateAdmin);
   
-  router.patch("/admins/approve/:id",[checkPermissionForAdmin()],approveUser)
+  router.patch("/admins/approve/:id",[isAdminExist,checkPermissionForAdmin()],approveUser)
 
 };
