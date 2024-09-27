@@ -1,7 +1,6 @@
 import express from "express";
 
 import { deleteStudentById, getStudentById, getStudents } from "../db/students";
-import { roles } from "../../config";
 
 export const getAllStudents = async (
   _req: express.Request,
@@ -114,7 +113,6 @@ export const changeRoleStudent = async ( //TODO when we change role we need to d
       });
     }
 
-    roles;
   } catch (error) {
     console.log(error);
     return res.status(400).json({ status: false, error: error }).end();

@@ -20,6 +20,24 @@ export const getAllAdmins = async (
     });
   }
 };
+export const getAdmin = async (
+  req: express.Request,
+  res: express.Response
+) => {
+  try {
+    const { id } = req.params;
+    const user = await getAdminById(id);
+    console.log("student : " +user);
+    res.status(200).json({
+      status: true,
+      data:user
+    }).end();
+  } catch (error) {
+    console.log(error);
+    return res.status(400).json({ status: false, error: error }).end();
+  }
+};
+
 
 export const deleteAdmin = async (
   req: express.Request,
