@@ -36,10 +36,13 @@ export const checkPermissionForAdmin = () => {
       const userRole = existUser.role;
 
       if (userRole !== roles["ADMIN"]) {
-        return res.status(403).json({
-          status: false,
-          error: `You need to be a ADMIN to access this end point`,
-        }).end();
+        return res
+          .status(403)
+          .json({
+            status: false,
+            error: `You need to be a ADMIN to access this end point`,
+          })
+          .end();
       }
       next();
     } catch (error) {
@@ -67,7 +70,7 @@ export const isApproved = async (
         user = await getTeacherByEmail(email).select("+user.isApproved");
         break;
 
-      case roles.ADMIN:
+      case roles.STUDENT:
         user = await getStudentByEmail(email).select("+user.isApproved");
         break;
       default:

@@ -9,10 +9,10 @@ import { roles } from "../../config";
 export const login = async (req: express.Request, res: express.Response) => {
   try {
     const { email, password, role } = req.body;
-    if (!email || !password) {
+    if (!email || !password || !role) {
       return res.send(400).json({
         status: false,
-        error: "either email or password is wrong",
+        error: "either email, password or role is wrong",
       });
     }
 
