@@ -39,7 +39,7 @@ export const checkPermissionForAdmin = () => {
         return res.status(403).json({
           status: false,
           error: `You need to be a ADMIN to access this end point`,
-        }).end;
+        }).end();
       }
       next();
     } catch (error) {
