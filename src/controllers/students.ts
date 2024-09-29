@@ -25,11 +25,13 @@ export const getStudent = async (
   try {
     const { id } = req.params;
     const user = await getStudentById(id);
-    console.log("student : " +user);
-    res.status(200).json({
-      status: true,
-      data:user
-    }).end();
+    res
+      .status(200)
+      .json({
+        status: true,
+        data: user,
+      })
+      .end();
   } catch (error) {
     console.log(error);
     return res.status(400).json({ status: false, error: error }).end();
@@ -42,7 +44,6 @@ export const deleteStudent = async (
 ) => {
   try {
     const { id } = req.params;
-
     const deletedStudent = await deleteStudentById(id);
     return res.status(202).json(deletedStudent).end();
   } catch (error) {
@@ -83,7 +84,8 @@ export const updateStudent = async (
   }
 };
 
-export const changeRoleStudent = async ( //TODO when we change role we need to delete user from current table and add on new respective table
+export const changeRoleStudent = async (
+  //TODO when we change role we need to delete user from current table and add on new respective table
   req: express.Request,
   res: express.Response
 ) => {
@@ -112,7 +114,6 @@ export const changeRoleStudent = async ( //TODO when we change role we need to d
         error: "you are not registered student",
       });
     }
-
   } catch (error) {
     console.log(error);
     return res.status(400).json({ status: false, error: error }).end();
