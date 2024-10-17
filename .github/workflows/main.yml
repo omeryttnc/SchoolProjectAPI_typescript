@@ -4,11 +4,12 @@ on:
       - main
 
 jobs:
-
-
+  run_pull:
+    name: run pull
+    runs-on: ubuntu-latest
     steps:
     - name: install npm
       run: |
         npm install
         npm run startNodeman
-    
+  
