@@ -9,8 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: install npm
-      run: |
-        cd ..
-        npm install
-        npm run startNodeman
+      uses: actions/checkout@v2
+      with:
+        path: SchoolProjectAPI_typescript
+        run: |
+          npm install
+          npm run startNodeman
   
