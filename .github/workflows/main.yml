@@ -10,6 +10,8 @@ jobs:
     steps:
     - name: install npm
       run: |
-        cd ..
+          cd ..
+    - name: install
+      run: |
         npm install
   
