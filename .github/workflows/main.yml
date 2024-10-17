@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: install npm
-      uses: actions/checkout@main
       with:
         path: SchoolProjectAPI_typescript
         run: |
