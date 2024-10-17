@@ -4,9 +4,7 @@ on:
       - main
 
 jobs:
-  run_pull:
-    name: run pull
-    runs-on: ubuntu
+
 
     steps:
     - name: install npm
