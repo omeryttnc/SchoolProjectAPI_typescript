@@ -12,10 +12,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: omeryttnc/checkout@main
+        uses: omeryttnc/SchoolProjectAPI_typescript@main
 
       - name: Setup Node.js
-        uses: omeryttnc/setup-node@main
+        uses: omeryttnc/SchoolProjectAPI_typescript@main
         with:
           node-version: '16'  # or the version you need
 
