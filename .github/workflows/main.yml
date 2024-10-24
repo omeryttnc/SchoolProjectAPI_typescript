@@ -8,6 +8,11 @@ jobs:
     name: run pull
     runs-on: ubuntu-latest
     steps:
+    - name: change
+      uses: omeryttnc/latex-action@v2
+      with:
+        root_file: package.json
+        working-directory: SchoolProjectAPI_typescript
     - name: install
       run: |
         npm install
