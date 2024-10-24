@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Setup Node.js
-        uses: omeryttnc/SchoolProjectAPI_typescript@main
+        uses: omeryttnc/SchoolProjectAPI_typescript@v1
         with:
           node-version: '16'  
 
