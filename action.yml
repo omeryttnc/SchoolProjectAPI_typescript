@@ -11,9 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: omeryttnc/SchoolProjectAPI_typescript@main
-
       - name: Setup Node.js
         uses: omeryttnc/SchoolProjectAPI_typescript@main
         with:
