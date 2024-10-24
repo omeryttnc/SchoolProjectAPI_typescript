@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Node.js
+        uses: omeryttnc/SchoolProjectAPI_typescript@main
+        with:
+          node-version: '16'  
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
