@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: change
-      uses: omeryttnc/SchoolProjectAPI_typescript@v1
+      uses: omeryttnc/SchoolProjectAPI_typescript@main
       with:
         root_file: package.json
         working-directory: SchoolProjectAPI_typescript
