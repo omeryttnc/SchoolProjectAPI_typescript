@@ -1,19 +1,26 @@
+name: CI
+
 on:
   push:
     branches:
       - main
+  pull_request:
 
 jobs:
-  run_pull:
-    name: run pull
+  build:
     runs-on: ubuntu-latest
+
     steps:
-    - name: change
-      uses: omeryttnc/SchoolProjectAPI_typescript@main
-      with:
-        root_file: package.json
-        working-directory: SchoolProjectAPI_typescript
-    - name: install
-      run: |
-        npm install
-  
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # or the version you need
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
