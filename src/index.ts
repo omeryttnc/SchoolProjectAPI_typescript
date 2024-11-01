@@ -11,6 +11,7 @@ import router from "./router";
 import { config } from "../config";
 
 const PORT = process.env.PORT || config.port;
+const DATABASE= process.env.DATABASE || secretdata.mongo;
 
 const app = express();
 
