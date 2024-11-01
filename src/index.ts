@@ -10,7 +10,7 @@ import mongoose from "mongoose";
 import router from "./router";
 import { config } from "../config";
 
-const PORT = process.env.PORT || config.port;
+const PORT = process.env.PORT || config.port || 4000;
 const DATABASE= process.env.DATABASE || ""
 
 const app = express();
