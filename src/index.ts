@@ -4,14 +4,14 @@ import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import compression from "compression";
 import cors from "cors";
-import { secretdata } from "../secretdata";
+//import { secretdata } from "../secretdata";
 import mongoose from "mongoose";
 
 import router from "./router";
 import { config } from "../config";
 
 const PORT = process.env.PORT || config.port;
-const DATABASE= process.env.DATABASE || secretdata.mongo;
+const DATABASE= process.env.DATABASE //|| secretdata.mongo;
 
 const app = express();
 
@@ -32,7 +32,7 @@ server.listen(PORT, () => {
 });
 
 mongoose.Promise = Promise;
-mongoose.connect(secretdata.mongo);
+//mongoose.connect(DATABASE);
 mongoose.connection.on("error", (error: Error) => console.log(error));
 
 app.use("/api", router());
