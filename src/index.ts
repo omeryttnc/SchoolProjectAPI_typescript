@@ -11,7 +11,7 @@ import router from "./router";
 import { config } from "../config";
 
 const PORT = process.env.PORT || config.port || 4000;
-const DATABASE= process.env.DATABASE || ""
+const DATABASE= process.env.DATABASE || "mongodb+srv://omeryttnc:zKlloM4nAJo2eIC0@schoolproject.mabla.mongodb.net/?retryWrites=true&w=majority&appName=schoolProject"
 
 const app = express();
 
