@@ -1,5 +1,5 @@
 import crypto from 'crypto';
-import { secretdata } from '../../secretdata';
+import { secretdata } from '../../etc/secrets/secretdata';
 
 export const random=()=> crypto.randomBytes(128).toString('base64');
 export const authentication = (salt:string,password:string)=>{
