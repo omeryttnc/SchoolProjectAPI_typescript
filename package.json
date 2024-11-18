@@ -9,7 +9,10 @@
     "rundocker": "docker run --publish 3000:3000 myapp",
     "test": "jest",
     "testwatch": "npm run test -- --watch",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "findPortId": "netstat -ano | findstr :3000",
+    "killPortbyID": "taskkill /PID 15816 /F",
+    "runPort": "cd .\\ngrok\\ && ngrok.exe http http://localhost:3000"
   },
   "keywords": [],
   "author": "",

@@ -4,14 +4,14 @@ import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import compression from "compression";
 import cors from "cors";
-//import { secretdata } from "../etc/secrets/secretdata";
+import { secretdata } from "../etc/secrets/secretdata";
 import mongoose from "mongoose";
 
 import router from "./router";
 import { config } from "../config";
 
-const PORT = process.env.PORT || config.port || 4000;
-const DATABASE= process.env.DATABASE || "mongodb+srv://omeryttnc:zKlloM4nAJo2eIC0@schoolproject.mabla.mongodb.net/?retryWrites=true&w=majority&appName=schoolProject"
+const PORT = process.env.PORT || config.port;
+const DATABASE= process.env.DATABASE || secretdata.mongo
 
 const app = express();
 
