@@ -11,7 +11,10 @@ export const getAllAdmins = async (
 ) => {
   try {
     const admins = await getAdmins();
-    return res.status(200).json(admins);
+    return res.status(200).json({
+      status:true ,
+      admins
+    });
   } catch (error) {
     console.log(error);
     return res.status(400).json({

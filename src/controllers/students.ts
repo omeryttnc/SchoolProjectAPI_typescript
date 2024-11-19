@@ -8,8 +8,11 @@ export const getAllStudents = async (
 ) => {
   try {
     const students = await getStudents();
-    return res.status(200).json(students);
-  } catch (error) {
+    console.log(`students ${students}`)
+    return res.status(200).json({
+      status:true ,
+      students
+    });  } catch (error) {
     console.log(error);
     return res.status(400).json({
       status: false,

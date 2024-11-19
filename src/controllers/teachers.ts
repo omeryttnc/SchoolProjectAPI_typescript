@@ -8,7 +8,10 @@ export const getAllTeachers = async (
 ) => {
   try {
     const teachers = await getTeachers();
-    return res.status(200).json(teachers);
+    return res.status(200).json({
+      status: true,
+      teachers,
+    });
   } catch (error) {
     console.log(error);
     return res.status(400).json({
@@ -25,11 +28,14 @@ export const getTeacher = async (
   try {
     const { id } = req.params;
     const user = await getTeacherById(id);
-    console.log("student : " +user);
-    res.status(200).json({
-      status: true,
-      data:user
-    }).end();
+    console.log("student : " + user);
+    res
+      .status(200)
+      .json({
+        status: true,
+        data: user,
+      })
+      .end();
   } catch (error) {
     console.log(error);
     return res.status(400).json({ status: false, error: error }).end();
@@ -83,7 +89,8 @@ export const updateTeacher = async (
   }
 };
 
-export const changeRoleStudent = async ( //TODO when we change role we need to delete user from current table and add on new respective table
+export const changeRoleStudent = async (
+  //TODO when we change role we need to delete user from current table and add on new respective table
   req: express.Request,
   res: express.Response
 ) => {
@@ -112,10 +119,8 @@ export const changeRoleStudent = async ( //TODO when we change role we need to d
         error: "you are not registered student",
       });
     }
-
   } catch (error) {
     console.log(error);
     return res.status(400).json({ status: false, error: error }).end();
   }
 };
-
