@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "startNodeman": "nodemon",
+    "start": "nodemon",
     "startType": "ts-node src/index.ts",
     "docker": "docker build -t myapp .",
     "rundocker": "docker run --publish 3000:3000 myapp",
