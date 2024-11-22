@@ -1,5 +1,5 @@
 1 update main 
 2 you should run "npm install"
-3 then run "npm run startNodeman" 
-4 create file as "secretdata.ts"
-5 include database info 
+3 then run "npm run start" 
+4 create environment variable as DATABASE and SECRET
+5 
