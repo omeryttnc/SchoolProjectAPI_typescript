@@ -5,4 +5,3 @@ yarn.lock
 
 # IDE Cache Files
 .idea/
-secretdata.ts
